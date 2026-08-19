@@ -68,12 +68,17 @@ class Quiz {
             "/"+ this.filteredQuestions.length +
             "\nYour score is : " +  this.score + 
             "/" + this.totalPoints +
-            "\nSuccess rate : " + successRate + 
+            "\nSuccess rate : " + successRate.toFixed(2) + 
             "%\n" + mention + "\n"
         );
     }
     calculateSuccessRate(){
-        return ((this.correctAnswersCount*100)/this.filteredQuestions.length).toFixed(2);
+        if (this.filteredQuestions.length === 0){
+            return 0;
+        }
+        else{
+            return ((this.correctAnswersCount*100)/this.filteredQuestions.length);
+        }
     }
     getMention(successRate){
         if(successRate>=80){
@@ -151,6 +156,8 @@ const newGeographyAnswers = ["Ottawa","Pacifique"];
 geographyQuiz.reset();
 geographyQuiz.startQuiz(newGeographyAnswers);
 //scienceQuiz.startQuiz(scienceAnswers);
+
+
 
 
 
