@@ -14,3 +14,4 @@ A JavaScript quiz application that filters questions by category and difficulty,
 
 ```bash
 node index.js
+```
